@@ -26,6 +26,7 @@ This project is a WIP, so this list may be expanded, but to this day I have work
 
 - **WASD** - Movement
 - **Space** - Jump
+- **ESC** - Exit game and go to Level Picker
 
 ## Play
 
