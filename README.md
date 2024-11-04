@@ -1,5 +1,5 @@
 ﻿![enter image description here](https://img.shields.io/badge/Author-Meganitrospeed-red) [![CodeFactor](https://www.codefactor.io/repository/github/meganitrospeed/AngularSequelizeExpress/badge)](https://www.codefactor.io/repository/github/meganitrospeed/AngularSequelizeExpress) ![enter image description here](https://img.shields.io/maintenance/yes/2024)
-# AngularSequelizeExpress
+# BallJump
 Small game using the Unity Game engine
 ------- Atention -------
 You need Git-LFS to download this project, if you don't have it, you can download it [here](https://git-lfs.github.com/)
@@ -7,9 +7,9 @@ You need Git-LFS to download this project, if you don't have it, you can downloa
 ## 🚩 Table of Contents
 
 - [What we worked with](#-tools)
-- [Features](#-features)
+- [Controls](#-controls)
+- [Play](#-play)
 - [License](#-license)
-- [Setup](#-setup)
 
 ## 🔧 Tools
 This project is a WIP so this list may be expanded, but to this day I have worked with
@@ -23,16 +23,13 @@ This project is a WIP so this list may be expanded, but to this day I have worke
 - **WASD** - Movement
 - **Space** - Jump
 
-## Setup
+## Play
 
-- 1º Enter the Backend folder
-- 2º Run "npm install" and start the project with "node index.js"
-- 3º Enter the Frontend folder
-- 4º Run "npm install" and start the project with "npm start" \
-  Details:\
-  Backend starts on Port :3000 \
-  Frontend depends on Ionic \
-  API documentation is available after backend starts on http://localhost:3000/api-docs/
+Enter the Level Picker Scene and run it.
+
+Gameplay:
+Run around and obtain points
+Try to not fall out of bounds
 
 
 ## 📜 License
