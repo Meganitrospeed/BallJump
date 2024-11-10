@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,12 +14,19 @@ public class PlayerController : MonoBehaviour
     private InputActions inputActions;
     private int count;
     public TextMeshProUGUI countText;
+    public AudioClip winningSound;
+    private AudioSource audioSource;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         inputActions = new InputActions();
         count = 0;
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
         SetCountText();
     }
 
@@ -29,6 +37,7 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             count = count + 1;
             SetCountText();
+            CheckAllPickUpsCollected();
         }
     }
 
@@ -87,5 +96,24 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene("Level Picker");
         }
+    }
+
+    private void CheckAllPickUpsCollected()
+    {
+        GameObject[] pickUps = GameObject.FindGameObjectsWithTag("PickUp");
+        if (pickUps.Length == 0)
+        {
+            StartCoroutine(PlayWinningSoundAndLoadScene());
+        }
+    }
+
+    private IEnumerator PlayWinningSoundAndLoadScene()
+    {
+        if (audioSource != null && winningSound != null)
+        {
+            audioSource.PlayOneShot(winningSound);
+            yield return new WaitForSeconds(5f);
+        }
+        SceneManager.LoadScene("Level Picker");
     }
 }
